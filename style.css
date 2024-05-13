@@ -48,6 +48,7 @@ input:checked + .move::before {
     transform: translateX(54px);
 }
 
+
 .light {
     position: absolute;
     width: 29.74px;
@@ -70,6 +71,7 @@ input:checked + .move::before {
 }
 
 .frame-bg {
+    transition: 0.5s;
     width: 423px;
     padding-top: 52px;
     border-radius: 40px;
@@ -77,11 +79,16 @@ input:checked + .move::before {
 }
 
 .frame-menu {
+    transition: 0.5s;
     width: 423px;
     height: 507px;
-    border-radius: 30px;
+    border-radius: 40px;
     background: #A9DCFD;
     box-shadow: 0px -5px 70px 0px #0000001A;
+}
+
+.symbols-list {
+    transition: 0.5s;
 }
 
 .wrap {
