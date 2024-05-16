@@ -49,10 +49,22 @@ input:checked + .move::before {
 }
 
 .light {
+    display: none;
     position: absolute;
     opacity: 40%;
     width: 29.74px;
     height: 29.74px;
+    margin-top: 7px;
+    margin-left: 17px;
+    z-index: 3;
+    color: #373737;
+}
+
+.light2 {
+    position: absolute;
+    width: 29.74px;
+    height: 29.74px;
+    opacity: 40%;
     margin-top: 7px;
     margin-left: 17px;
     z-index: 3;
@@ -61,6 +73,17 @@ input:checked + .move::before {
 
 .dark {
     align-items: center;
+    position: absolute;
+    opacity: 80%;
+    width: 29.74px;
+    height: 29.74px;
+    margin-top: 7px;
+    margin-left: 75px;
+    z-index: 3;
+    color: #FBFBFBCC;
+}
+
+.dark2 {
     position: absolute;
     opacity: 80%;
     width: 29.74px;
@@ -612,4 +635,3 @@ input:checked + .move::before {
     margin-top: 20px;
     margin-left: 20px;
 }
-
