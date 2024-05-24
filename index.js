@@ -6,12 +6,6 @@ function printValue(val) {
     document.querySelector(".main-information").innerHTML += val;
     if (document.querySelector(".main-information").innerHTML == "00")
         document.querySelector(".main-information").innerHTML = "0";
-    let lastSymb = document.querySelector(".main-information");
-    let lastSymbCheck = lastSymb.at(-1);
-
-    if (lastSymb = '+') {
-        
-    }
 }
 function main() {
     const buttonsNum = document.querySelectorAll(".number-list > li > button");
