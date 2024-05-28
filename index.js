@@ -2,14 +2,18 @@ function printValue(val) {
   if (
     document.querySelector(".main-information").innerHTML == "0" &&
     val != "."
-  )
+  ) {
     document.querySelector(".main-information").innerHTML = "";
+  }
   if (
     val == "." &&
     document.querySelector(".main-information").innerHTML.includes(".")
-  )
+  ) {
     return;
+  }
   document.querySelector(".main-information").innerHTML += val;
+  console.log(document.querySelector(".main-information"));
+  console.log(val);
   if (document.querySelector(".main-information").innerHTML == "00")
     document.querySelector(".main-information").innerHTML = "0";
 }
@@ -51,14 +55,17 @@ function main() {
   document.querySelector(".plus-text").addEventListener("click", function () {
     let a = document.querySelector(".history-information").textContent;
     if (isOperation(a[a.length - 1])) {
-      a = a.split("")
-      a.pop()
+      a = a.split("");
+      a.pop();
       document.querySelector(".history-information").textContent = a.join("");
     }
     const p1 = document.querySelector(".main-information");
     const p2 = document.querySelector(".history-information");
 
-    p2.textContent += p1.textContent;
+    const addValue = p2.textContent
+      ? p1.textContent.split("").reverse().join("")
+      : p1.textContent;
+    p2.textContent += addValue;
 
     p1.textContent = "0";
     if (p2.textContent === "+") {
@@ -71,12 +78,18 @@ function main() {
     const p2 = document.querySelector(".history-information");
     let a = document.querySelector(".history-information").textContent;
     if (isOperation(a[a.length - 1])) {
-      a = a.split("")
-      a.pop()
+      a = a.split("");
+      a.pop();
       document.querySelector(".history-information").textContent = a.join("");
     }
-    p2.textContent += p1.textContent;
 
+    let addValue = p2.textContent
+      ? p1.textContent[p1.textContent.length - 1] + p1.textContent
+      : p1.textContent;
+    // addValue.slice(addValue.length - 1, 1); 
+    // потрыбно прибрати ласт символ
+    p2.textContent += addValue;
+    console.log(p1.textContent);
     p1.textContent = "0";
   });
 
@@ -87,11 +100,15 @@ function main() {
       const p2 = document.querySelector(".history-information");
       let a = document.querySelector(".history-information").textContent;
       if (isOperation(a[a.length - 1])) {
-        a = a.split("")
-        a.pop()
+        a = a.split("");
+        a.pop();
         document.querySelector(".history-information").textContent = a.join("");
       }
-      p2.textContent += p1.textContent;
+
+      const addValue = p2.textContent
+        ? p1.textContent.split("").reverse().join("")
+        : p1.textContent;
+      p2.textContent += addValue;
 
       p1.textContent = "0";
       if (p2.textContent === "÷") {
@@ -104,13 +121,17 @@ function main() {
       const p1 = document.querySelector(".main-information");
       const p2 = document.querySelector(".history-information");
       let a = document.querySelector(".history-information").textContent;
+
       if (isOperation(a[a.length - 1])) {
-        a = a.split("")
-        a.pop()
+        a = a.split("");
+        a.pop();
         document.querySelector(".history-information").textContent = a.join("");
       }
-      p2.textContent += p1.textContent;
 
+      const addValue = p2.textContent
+        ? p1.textContent.split("").reverse().join("")
+        : p1.textContent;
+      p2.textContent += addValue;
       p1.textContent = "0";
       if (p2.textContent === "×") {
         p2.textContent = "";
